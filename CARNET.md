@@ -71,15 +71,15 @@
 
 1. Quelle est la différence de rôle entre le HTML et le CSS ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le HTML décrit la structure et le contenu (titre, paragraphe, liste). Le CSS décrit l’apparence (couleurs, police, marges). On peut changer tout le style sans toucher au contenu.
 
 2. Pour afficher votre page `/presentation`, combien de fichiers le navigateur doit-il télécharger ? (Vous pourrez le vérifier à l'exercice suivant !)
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Au moins 3 : la page HTML, le fichier style.css et l’image du logo Python. Le navigateur demande aussi souvent une favicon (l’icône de l’onglet).
 
 3. Pourquoi faut-il parfois faire **Ctrl + F5** pour voir les changements de CSS ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le navigateur garde le CSS en mémoire (le cache) pour ne pas le retélécharger à chaque visite. Ctrl + F5 force le rechargement de tous les fichiers depuis le serveur.
 
 ---
 
