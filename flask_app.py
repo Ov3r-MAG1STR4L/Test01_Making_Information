@@ -38,7 +38,7 @@ def presentation():
         <li><strong>Blur</strong>, un jeu de course arcade de 2010 avec des power-ups, que je modifie (caméra libre)</li>
         <li>Le code (bientôt !)</li>
     </ul>
-    <li><a href="https://fr.wikipedia.org/wiki/Blur_(jeu_vid%C3%A9o)" target="_blank">Blur</a>, mon jeu de course préféré</li>
+    <li><a href="https://steamcommunity.com/app/42640" target="_blank">Blur</a>, mon jeu de course préféré</li>
     """
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
