@@ -1,10 +1,10 @@
 # 📒 Mon carnet de bord
 
-**Nom :** 
+**Nom :** SANQUER
 
-**Prénom :** 
+**Prénom :** Erwan
 
-**Adresse de mon site :** [https://______.pythonanywhere.com](https://ov3rmag1str4l.pythonanywhere.com)
+**Adresse de mon site :** [https://Ov3rMAG1STR4L.pythonanywhere.com](https://ov3rmag1str4l.pythonanywhere.com)
 
 > Modifiez ce fichier directement sur GitHub (icône crayon ✏️) pour répondre aux questions de chaque exercice.
 > Écrivez avec vos propres mots : une réponse courte et juste vaut mieux qu'un long copier-coller ! 🙂
