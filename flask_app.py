@@ -25,7 +25,7 @@ def accueil():
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
 @app.get("/test")
-def accueil():
+def test():
     return "Page de test"
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
