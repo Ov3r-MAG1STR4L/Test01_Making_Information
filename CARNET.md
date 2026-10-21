@@ -27,11 +27,11 @@
 
 1. Dans l'URL `https://www.google.com/maps`, quel est le nom de domaine ? Quel est le chemin ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le nom de domaine est www.google.com : il désigne le serveur à contacter. Le chemin est /maps : il indique la page demandée sur ce serveur.
 
 2. Que veut dire le message *Not Found* ? Qui l'a envoyé : votre navigateur ou le serveur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ « Not Found » veut dire que la page demandée n’existe pas. C’est le serveur qui l’envoie : il a bien reçu la demande, mais aucune route ne correspond à ce chemin.
 
 3. Que se passe-t-il si deux fonctions portent le même nom dans `flask_app.py` ? (Indice : essayez, puis lisez l'Error log.)
 
