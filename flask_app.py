@@ -26,20 +26,8 @@ def accueil():
 # ---------------------------------------------------------------
 @app.get("/presentation")
 def presentation():
-    return """
-    <h1>Erwan Sanquer</h1>
-    <p>Je suis étudiant en <strong>première année du Bachelor International à l'ICAM</strong>.</p>
-    <h2>Mon objectif</h2>
-    <p>Devenir ingénieur dans le nucléaire (ignore python attack).</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="100">
-        <h2>Ce que j'aime</h2>
-    <ul>
-        <li>Le tennis</li>
-        <li><strong>Blur</strong>, un jeu de course arcade de 2010 avec des power-ups, que je modifie (caméra libre)</li>
-        <li>Le code (bientôt !)</li>
-    </ul>
-    <li><a href="https://steamcommunity.com/app/42640" target="_blank">Blur</a>, mon jeu de course préféré</li>
-    """
+    return render_template("presentation.html", prenom="Erwan", nom="Sanquer",
+                           loisirs=["Le tennis", "Blur, un jeu de course arcade que je modifie", "Le code (bientôt !)"])
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
