@@ -4,7 +4,7 @@
 
 **Prénom :** 
 
-**Adresse de mon site :** https://______.pythonanywhere.com
+**Adresse de mon site :** [https://______.pythonanywhere.com](https://ov3rmag1str4l.pythonanywhere.com)
 
 > Modifiez ce fichier directement sur GitHub (icône crayon ✏️) pour répondre aux questions de chaque exercice.
 > Écrivez avec vos propres mots : une réponse courte et juste vaut mieux qu'un long copier-coller ! 🙂
@@ -15,11 +15,11 @@
 
 1. Où se trouve physiquement le code qui fabrique votre page : sur votre ordinateur, sur GitHub ou sur PythonAnywhere ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le code est stocké sur GitHub, mais celui qui fabrique la page tourne sur le serveur de PythonAnywhere. GitHub Actions copie le code de GitHub vers PythonAnywhere à chaque commit. Rien ne tourne sur mon ordinateur.
 
 2. Pourquoi votre voisin(e) peut-il voir votre site, alors que vous n'avez rien installé sur son ordinateur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le site tourne sur un serveur connecté à Internet en permanence. Son navigateur envoie une demande à l’adresse du site, le serveur lui renvoie la page, et le navigateur sait déjà l’afficher.
 
 ---
 
