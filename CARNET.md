@@ -35,7 +35,7 @@
 
 3. Que se passe-t-il si deux fonctions portent le même nom dans `flask_app.py` ? (Indice : essayez, puis lisez l'Error log.)
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le site plante avec « Something went wrong ». L’Error log indique AssertionError: View function mapping is overwriting an existing endpoint function: accueil à la ligne 27 de flask_app.py. Flask identifie chaque route par le nom de sa fonction : deux fonctions avec le même nom créent un conflit et le serveur refuse de démarrer.
 
 ---
 
