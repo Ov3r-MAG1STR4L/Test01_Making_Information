@@ -24,10 +24,9 @@ def accueil():
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
-@app.get("/presentation")
-def presentation():
-    return render_template("presentation.html", prenom="Erwan", nom="Sanquer",
-                           loisirs=["Le tennis", "Blur, un jeu de course arcade que je modifie", "Le code (bientôt !)"])
+@app.get("/")
+def accueil():
+    return render_template("accueil.html")
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
