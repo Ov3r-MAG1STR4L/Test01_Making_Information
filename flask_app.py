@@ -24,9 +24,21 @@ def accueil():
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
-@app.get("/test")
-def test():
-    return "Page de test"
+@app.get("/presentation")
+def presentation():
+    return """
+    <h1>Erwan Sanquer</h1>
+    <p>Je suis étudiant en <strong>première année du Bachelor International à l'ICAM</strong>.</p>
+    <h2>Ce que j'aime</h2>
+    <ul>
+        <li>Le tennis</li>
+        <li>Les jeux vidéo et le modding</li>
+        <li>Le code (bientôt !)</li>
+    </ul>
+    <h2>Mon objectif</h2>
+    <p>Devenir ingénieur dans le nucléaire.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="100">
+    """
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
