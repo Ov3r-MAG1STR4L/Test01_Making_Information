@@ -175,15 +175,15 @@
 
 1. Quelle est la différence entre une page HTML et une réponse JSON ? À qui chacune est-elle destinée ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Une page HTML contient des balises pour être mise en forme et lue par un humain dans un navigateur. Une réponse JSON contient seulement des données brutes, organisées en paires nom/valeur, destinées à un programme qui va les utiliser.
 
 2. Dans la page `/horloge`, quel code s'exécute sur le **serveur** et quel code s'exécute dans le **navigateur** ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Sur le serveur, le Python de flask_app.py : il envoie la page horloge.html, puis calcule l’heure à chaque appel de /api/heure. Dans le navigateur, le JavaScript de la balise <script> : il appelle l’API toutes les secondes avec fetch et met à jour l’heure dans la page.
 
 3. Citez une application de votre téléphone qui, selon vous, utilise une API. Quelles données échange-t-elle ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ L’application météo : elle envoie ma position à un serveur et reçoit en JSON la température, le ciel et les prévisions, qu’elle affiche ensuite à sa façon.
 
 ---
 
@@ -191,4 +191,4 @@
 
 En quelques phrases, expliquez à un ami ce qui se passe entre le moment où il tape une adresse dans son navigateur et celui où la page s'affiche :
 
-> _Ma réponse :_ 
+> _Ma réponse :_ Quand on tape une adresse, le navigateur envoie une requête HTTP au serveur désigné par le nom de domaine. Le serveur exécute son code selon le chemin demandé et renvoie une réponse avec un code de statut, souvent une page HTML. Le navigateur lit cette page, télécharge les fichiers en plus (CSS, images, scripts) avec d’autres requêtes, puis affiche le tout.
