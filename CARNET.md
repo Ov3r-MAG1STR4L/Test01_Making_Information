@@ -163,7 +163,7 @@
 
 3. Dans l'Access log, retrouvez une requête qui a reçu un code `404`. Quelle page était demandée ?
 
-   > _Ma réponse :_ /jrierheughrgouirhieo, testée à l’exercice 9 (ou /favicon.ico, demandée automatiquement par le navigateur). → Vérifie dans ton Access log et mets la page que tu vois vraiment.
+   > _Ma réponse :_ /jrierheughrgouirhieo, testée à l’exercice 9
 
 4. Après cet exercice, que pensez-vous de la notion de « navigation anonyme » ?
 
