@@ -32,14 +32,30 @@ def presentation():
 
 @app.get("/bonjour/<prenom>")
 def bonjour(prenom):
-    return f"<h1>Bonjour {prenom} !</h1>"
+    return render_template("bonjour.html", prenom=prenom)
 
 
 @app.get("/calcul")
 def calcul():
-    a = int(request.args.get("a", 0))
-    b = int(request.args.get("b", 0))
-    return f"{a} + {b} = {a + b}"
+    try:
+        a = int(request.args.get("a", 0))
+        b = int(request.args.get("b", 0))
+    except ValueError:
+        return "Erreur : a et b doivent être des nombres.", 400
+
+    op = request.args.get("op", "plus")
+    if op == "plus":
+        return f"{a} + {b} = {a + b}"
+    elif op == "moins":
+        return f"{a} - {b} = {a - b}"
+    elif op == "fois":
+        return f"{a} × {b} = {a * b}"
+    elif op == "divise":
+        if b == 0:
+            return "Erreur : division par zéro.", 400
+        return f"{a} ÷ {b} = {a / b}"
+    else:
+        return "Opération inconnue (plus, moins, fois, divise).", 400
 
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
