@@ -15,5 +15,15 @@ h2 {
 }
 
 nav a {
-    margin-right: 15px;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 8px 14px;
+    background-color: teal;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: tomato;
 }
