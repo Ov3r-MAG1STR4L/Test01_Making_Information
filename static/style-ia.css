@@ -1,0 +1,218 @@
+/* =============================================================
+   Thème "Web Island" — généré par IA (Claude, Anthropic)
+   Couleurs inspirées de l'île : mer, sable, or.
+   ============================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+    --mer: #1e9bd7;
+    --mer-fonce: #0b5f8a;
+    --sable: #f4e6c3;
+    --or: #f2a51a;
+    --fond: #eef7fc;
+    --carte: #ffffff;
+    --texte: #1f2933;
+    --doux: #5b6770;
+    --ombre: 0 6px 20px rgba(11, 95, 138, 0.12);
+}
+
+/* Mode sombre automatique selon le réglage de l'ordinateur */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fond: #0d1b24;
+        --carte: #152a37;
+        --texte: #e6edf3;
+        --doux: #9fb3c2;
+        --sable: #3a3220;
+        --ombre: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 16px 80px;
+    background:
+        radial-gradient(circle at top right, rgba(30, 155, 215, 0.15), transparent 40%),
+        var(--fond);
+    color: var(--texte);
+    line-height: 1.7;
+    animation: apparition 0.5s ease-out;
+}
+
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mention IA en bas de chaque page, sans toucher au HTML */
+body::after {
+    content: "🤖 Thème CSS généré par IA (Claude, Anthropic)";
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    color: white;
+    background: var(--mer-fonce);
+    border-radius: 20px;
+    opacity: 0.85;
+}
+
+/* Titres */
+h1 {
+    font-size: 2.2rem;
+    margin: 24px 0 8px;
+    background: linear-gradient(90deg, var(--mer), var(--or));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    color: var(--mer);
+    border-left: 5px solid var(--or);
+    padding-left: 12px;
+    margin-top: 32px;
+}
+
+/* Menu en barre collante */
+nav {
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+    background: var(--carte);
+    border-radius: 14px;
+    box-shadow: var(--ombre);
+}
+
+nav a {
+    padding: 8px 14px;
+    color: var(--texte);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+nav a:hover {
+    background: var(--mer);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Liens dans le texte */
+p a {
+    color: var(--mer);
+    font-weight: 600;
+    text-decoration-color: var(--or);
+    text-underline-offset: 3px;
+}
+
+/* Paragraphes et listes en cartes */
+ul {
+    list-style: none;
+    padding: 16px 20px;
+    background: var(--carte);
+    border-radius: 14px;
+    box-shadow: var(--ombre);
+}
+
+li {
+    padding: 6px 0 6px 28px;
+    position: relative;
+}
+
+li::before {
+    content: "🏝️";
+    position: absolute;
+    left: 0;
+}
+
+li + li {
+    border-top: 1px dashed var(--sable);
+}
+
+/* Images */
+img {
+    margin-top: 16px;
+    transition: transform 0.4s;
+}
+
+img:hover {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+/* Formulaire en carte */
+form {
+    padding: 24px;
+    background: var(--carte);
+    border-radius: 14px;
+    box-shadow: var(--ombre);
+}
+
+form label {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--doux);
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--texte);
+    background: var(--fond);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--mer);
+}
+
+button {
+    padding: 12px 24px;
+    font: inherit;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(90deg, var(--mer), var(--mer-fonce));
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ombre);
+}
+
+/* Horloge : gros chiffres */
+#heure {
+    font-variant-numeric: tabular-nums;
+    font-size: 3rem;
+}
+
+/* Petits écrans (téléphone) */
+@media (max-width: 600px) {
+    h1 { font-size: 1.7rem; }
+    nav a { font-size: 0.8rem; padding: 6px 10px; }
+    body::after { font-size: 0.65rem; }
+}
