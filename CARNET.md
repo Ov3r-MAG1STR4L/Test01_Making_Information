@@ -87,19 +87,19 @@
 
 1. Que signifie HTTP ? Qui envoie la **requête** et qui envoie la **réponse** ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ HTTP = HyperText Transfer Protocol, le protocole de communication du Web. Le navigateur envoie la requête, le serveur renvoie la réponse.
 
 2. Combien de requêtes votre page `/presentation` a-t-elle déclenchées ? Lesquelles ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ 4 requêtes : la page presentation (HTML), style.css, l’image du logo Python (chez Wikimedia) et favicon.ico.
 
 3. Que signifie le code `200` ? Et le code `404` de la favicon ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ 200 = « OK », le serveur a trouvé le fichier et l’envoie. 404 = « Not Found » : le navigateur demande tout seul une icône d’onglet (favicon.ico), mais mon site n’en a pas.
 
 4. Pourquoi les modifications faites dans l'onglet Éléments ne sont-elles pas visibles par les autres visiteurs ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ L’onglet Éléments modifie seulement la copie de la page dans mon navigateur. Le fichier sur le serveur ne change pas : au rechargement, ou pour un autre visiteur, le serveur renvoie la page d’origine.
 
 ---
 
@@ -107,15 +107,15 @@
 
 1. Dans l'URL `https://www.youtube.com/results?search_query=chat`, quel est le nom du paramètre ? Quelle est sa valeur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le paramètre s’appelle search_query, sa valeur est chat.
 
 2. Pourquoi le serveur plante-t-il avec `a=bonjour` ? Que faudrait-il faire pour l'éviter ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ int() essaie de convertir « bonjour » en nombre, c’est impossible : Python lève une ValueError et le serveur renvoie une erreur 500. Il faudrait vérifier ce que l’utilisateur envoie avant de le convertir (avec un try/except) et renvoyer un message d’erreur clair.
 
 3. Pourquoi est-il dangereux d'afficher **tel quel** ce que l'utilisateur envoie ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ L’utilisateur peut glisser du HTML, voire un script, qui s’exécute dans la page comme s’il venait du site. Un pirate pourrait envoyer ce lien piégé à quelqu’un pour voler ses données (faille XSS). Il ne faut jamais faire confiance à ce que l’utilisateur envoie.
 
 ---
 
