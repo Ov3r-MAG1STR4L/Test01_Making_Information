@@ -6,12 +6,17 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/presentation">Présentation</a>
+        <a href="/formulaire">Formulaire</a>
+        <a href="/bonjour/Erwan">Bonjour</a>
+        <a href="/calcul?a=6&b=3&op=fois">Calcul</a>
+    </nav>
     <h1>Faisons connaissance</h1>
     <form action="/salut" method="post">
         <label>Votre prénom : <input type="text" name="prenom"></label>
         <label>Votre ville : <input type="text" name="ville"></label>
-        <button type="submit">Envoyer</button>
-    </form>
         <label>Couleur préférée :
             <select name="couleur">
                 <option value="tomato">Rouge</option>
@@ -19,5 +24,7 @@
                 <option value="royalblue">Bleu</option>
             </select>
         </label>
+        <button type="submit">Envoyer</button>
+    </form>
 </body>
 </html>
