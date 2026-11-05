@@ -73,6 +73,28 @@ def salut():
     return render_template("salut.html", prenom=prenom, ville=ville,
                            couleur=couleur, methode=request.method)
 
+# 3xx : une redirection
+@app.get("/home")
+def home():
+    return redirect("/")
+
+
+# 4xx : un accès interdit
+@app.get("/secret")
+def secret():
+    abort(403)
+
+
+# Pages d'erreur personnalisées
+@app.errorhandler(404)
+def page_introuvable(erreur):
+    return render_template("404.html"), 404
+
+
+@app.errorhandler(403)
+def acces_interdit(erreur):
+    return render_template("403.html"), 403
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
