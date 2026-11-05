@@ -2,27 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Présentation</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-       <nav>
+    <nav>
         <a href="/">Accueil</a>
         <a href="/presentation">Présentation</a>
         <a href="/formulaire">Formulaire</a>
         <a href="/bonjour/Erwan">Bonjour</a>
         <a href="/calcul?a=6&b=3&op=fois">Calcul</a>
+        <a href="/moi">Moi</a>
+        <a href="/horloge">Horloge</a>
     </nav>
-    <h1>{{ prenom }} {{ nom }}</h1>
-    <p>Je suis étudiant en <strong>première année du Bachelor International à l'ICAM</strong>.</p>
-    <h2>Ce que j'aime</h2>
-    <ul>
-    {% for loisir in loisirs %}
-        <li>{{ loisir }}</li>
-    {% endfor %}
-    </ul>
-    <h2>Mon objectif</h2>
-    <p>Devenir ingénieur dans le nucléaire.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="100">
+    <h1>Bienvenue sur mon site !</h1>
+    <p>Ce site me sert à découvrir le fonctionnement du Web.</p>
+    <p>Un lien vers un autre site : <a href="https://fr.wikipedia.org/wiki/World_Wide_Web">l'histoire du Web</a>.</p>
 </body>
 </html>
