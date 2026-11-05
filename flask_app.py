@@ -28,6 +28,19 @@ def accueil():
 def presentation():
     return render_template("presentation.html", prenom="Erwan", nom="Sanquer",
                            loisirs=["Le tennis", "Blur, un jeu de course arcade que je modifie", "Le code (bientôt !)"])
+
+
+@app.get("/bonjour/<prenom>")
+def bonjour(prenom):
+    return f"<h1>Bonjour {prenom} !</h1>"
+
+
+@app.get("/calcul")
+def calcul():
+    a = int(request.args.get("a", 0))
+    b = int(request.args.get("b", 0))
+    return f"{a} + {b} = {a + b}"
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
