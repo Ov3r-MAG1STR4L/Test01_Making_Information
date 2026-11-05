@@ -155,19 +155,19 @@
 
 1. Citez trois informations que le serveur connaît sur vous, sans que vous ayez rien rempli.
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Mon adresse IP (80.124.x.x, qui donne ma zone géographique et mon fournisseur), mon navigateur et mon système (Opera GX sous Windows, sur ordinateur), et mes langues préférées (français, puis anglais et allemand).
 
 2. À quoi peut servir l'en-tête `Accept-Language` pour un site comme Wikipédia ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Wikipédia peut proposer automatiquement la version de la page dans ma langue (français plutôt qu’anglais) sans que j’aie à la choisir.
 
 3. Dans l'Access log, retrouvez une requête qui a reçu un code `404`. Quelle page était demandée ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ /jrierheughrgouirhieo, testée à l’exercice 9 (ou /favicon.ico, demandée automatiquement par le navigateur). → Vérifie dans ton Access log et mets la page que tu vois vraiment.
 
 4. Après cet exercice, que pensez-vous de la notion de « navigation anonyme » ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ La navigation privée efface seulement l’historique et les cookies sur mon ordinateur. Le serveur, lui, voit toujours mon IP, mon navigateur et mes langues, et les note dans son journal. Ce n’est pas de l’anonymat : il faudrait un VPN ou Tor pour cacher son IP.
 
 ---
 
