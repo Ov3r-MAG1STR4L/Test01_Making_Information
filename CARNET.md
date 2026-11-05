@@ -139,15 +139,15 @@
 
 1. Quelle est la différence entre une erreur `4xx` et une erreur `5xx` ? Qui est « fautif » dans chaque cas ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ erreur du client : il demande une page qui n’existe pas (404) ou à laquelle il n’a pas accès (403). 5xx = erreur du serveur : la demande est correcte mais le serveur plante (bug dans le code, panne), comme l’erreur 500 de l’exercice 7.
 
 2. Comment fonctionne une redirection ? Qui fait la deuxième requête : le serveur ou le navigateur ?
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Le serveur répond avec un code 3xx et un en-tête Location qui contient la nouvelle adresse. C’est le navigateur qui fait la deuxième requête vers cette adresse, tout seul.
 
 3. Donnez un exemple de situation où un vrai site utilise une redirection.
 
-   > _Ma réponse :_ 
+   > _Ma réponse :_ Taper http:// au lieu de https:// : le site redirige vers la version sécurisée. Autre exemple : une page qui a changé d’adresse redirige (301) vers la nouvelle, pour ne pas casser les anciens liens.
 
 ---
 
