@@ -2,16 +2,25 @@ body {
     font-family: Arial, sans-serif;
     max-width: 700px;
     margin: 40px auto;
+    padding: 0 16px;
     background-color: #f4f6fb;
     color: #222;
+    line-height: 1.6;
 }
 
 h1 {
     color: teal;
+    border-bottom: 3px solid tomato;
+    padding-bottom: 8px;
 }
 
 h2 {
     color: tomato;
+}
+
+/* Menu */
+nav {
+    margin-bottom: 24px;
 }
 
 nav a {
@@ -25,5 +34,42 @@ nav a {
 }
 
 nav a:hover {
+    background-color: tomato;
+}
+
+/* Liens dans le texte */
+p a {
+    color: teal;
+}
+
+/* Listes */
+ul {
+    background-color: white;
+    padding: 12px 32px;
+    border-radius: 6px;
+}
+
+/* Formulaire */
+form label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+input, select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
     background-color: tomato;
 }
