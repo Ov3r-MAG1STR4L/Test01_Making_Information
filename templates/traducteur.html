@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Translator</title>
+    <link rel="stylesheet" href="/static/bibliotheque.css">
+    <style>
+        main { max-width: 1300px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .col { display: flex; flex-direction: column; gap: 12px; }
+        label { font-weight: bold; color: var(--sea); }
+        textarea {
+            width: 100%; min-height: 220px; padding: 12px;
+            font-family: Consolas, "Courier New", monospace; font-size: 0.9rem;
+            background: #1f2933; color: #e6edf3;
+            border: 2px solid transparent; border-radius: 8px; resize: vertical;
+        }
+        textarea:focus { outline: none; border-color: var(--gold); }
+        iframe {
+            width: 100%; height: 100%; min-height: 470px;
+            background: white; border: 2px solid var(--sea); border-radius: 8px;
+        }
+        .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tools button {
+            padding: 8px 14px; border: none; border-radius: 20px; cursor: pointer;
+            background: var(--sea); color: white; font-weight: bold;
+        }
+        .tools button:hover { background: var(--gold); }
+        .lang { display: flex; justify-content: space-between; align-items: center; }
+        .badge { font-size: 0.8rem; color: var(--muted); }
+        .credits { font-size: 0.9rem; }
+        @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔁 HTML/CSS Translator</h1>
+        <p class="subtitle">Like a translator: write Hachtayaimail (HTML) and Ceyaissaiys (CSS), read the result in "human".</p>
+        <nav>
+            <a href="/bibliotheque">📚 Library</a>
+            <a href="/traducteur">🔁 Translator</a>
+            <a href="/">← Back to site</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>How it works</h2>
+            <p>Type HTML on the left and CSS below it. The browser "translates" the code into a page, live, on the right.
+               Need a word? Check the <a href="/bibliotheque">library</a>.</p>
+            <div class="tools">
+                <button type="button" onclick="exemple('carte')">Example: card</button>
+                <button type="button" onclick="exemple('liste')">Example: list + hover</button>
+                <button type="button" onclick="exemple('anim')">Example: @keyframes</button>
+                <button type="button" onclick="vider()">Clear</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="grid">
+                <div class="col">
+                    <div class="lang"><label for="html">HTML — Hachtayaimail</label><span class="badge">structure</span></div>
+                    <textarea id="html" spellcheck="false"></textarea>
+                    <div class="lang"><label for="css">CSS — Ceyaissaiys</label><span class="badge">appearance</span></div>
+                    <textarea id="css" spellcheck="false"></textarea>
+                </div>
+                <div class="col">
+                    <div class="lang"><label>Rendering — "human" language</label><span class="badge">what the browser shows</span></div>
+                    <!-- sandbox: scripts are blocked, so pasted code cannot run JavaScript (see XSS, exercise 7) -->
+                    <iframe id="rendu" sandbox title="Rendering"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="credits">
+            <h2>Credits</h2>
+            <p><strong>Idea:</strong> our MIA PBL8 group (ICAM International Bachelor, B1) — to answer our problem statement:
+               <em>"How can we understand the people from the island with basic mechanisms of HTML and CSS, in order to help the people?"</em></p>
+            <p><strong>Program:</strong> built by Claude (Anthropic), an AI assistant — <a href="https://claude.ai" target="_blank">claude.ai</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>The c(o)urse of web island – MIA PBL8 – 2026</p>
+    </footer>
+
+    <script>
+        // Runs in the BROWSER: rebuilds the page each time you type
+        const zoneHtml = document.getElementById("html");
+        const zoneCss = document.getElementById("css");
+        const rendu = document.getElementById("rendu");
+
+        const exemples = {
+            carte: {
+                html: '<div class="carte">\n  <h1>Hello Hachtayaimail!</h1>\n  <p>I am a <strong>paragraph</strong> inside a card.</p>\n  <a href="#">A link</a>\n</div>',
+                css: 'body {\n  font-family: Arial, sans-serif;\n  background-color: #e8f6fd;\n  padding: 20px;\n}\n.carte {\n  background: white;\n  padding: 20px;\n  border-radius: 12px;\n  border: 2px solid #1e9bd7;\n}\nh1 {\n  color: #1e9bd7;\n}'
+            },
+            liste: {
+                html: '<h2>Island treasures</h2>\n<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n  <li>Friendship</li>\n</ul>',
+                css: 'li {\n  padding: 8px;\n  margin: 4px 0;\n  background: #f4e6c3;\n  list-style: none;\n  transition: transform 0.3s;\n}\nli:hover {\n  transform: translateX(10px);\n  background: #f2a51a;\n}'
+            },
+            anim: {
+                html: '<div class="bateau">⛵</div>\n<p>The boat sails with @keyframes</p>',
+                css: '.bateau {\n  font-size: 3rem;\n  position: relative;\n  animation: vague 3s infinite alternate;\n}\n@keyframes vague {\n  from { left: 0; }\n  to { left: 200px; }\n}'
+            }
+        };
+
+        function traduire() {
+            rendu.srcdoc = "<!DOCTYPE html><html><head><meta charset='utf-8'><style>"
+                + zoneCss.value + "</style></head><body>" + zoneHtml.value + "</body></html>";
+        }
+
+        function exemple(nom) {
+            zoneHtml.value = exemples[nom].html;
+            zoneCss.value = exemples[nom].css;
+            traduire();
+        }
+
+        function vider() {
+            zoneHtml.value = "";
+            zoneCss.value = "";
+            traduire();
+        }
+
+        zoneHtml.addEventListener("input", traduire);
+        zoneCss.addEventListener("input", traduire);
+        exemple("carte");
+    </script>
+</body>
+</html>
