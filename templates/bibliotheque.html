@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Island Library – HTML & CSS memo</title>
+  <link rel="stylesheet" href="/static/bibliotheque.css">
+</head>
+<body>
+
+  <header>
+    <h1>Web Island Library</h1>
+    <p class="subtitle">HTML5 & CSS3 memo – MIA PBL8 "The c(o)urse of web island"</p>
+    <nav>
+      <a href="#structure">Page structure</a>
+      <a href="#html">HTML tags</a>
+      <a href="#attributes">HTML attributes</a>
+      <a href="#css-syntax">CSS syntax</a>
+      <a href="#selectors">Selectors</a>
+      <a href="#css">CSS properties</a>
+      <a href="#at-rules">@ rules</a>
+      <a href="#link">Linking HTML & CSS</a>
+      <a href="#vscode">VS Code quick start</a>
+      <a href="/traducteur">🔁 HTML/CSS translator</a>
+      <a href="/">← Back to site</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 1. PAGE STRUCTURE -->
+    <section id="structure">
+      <h2>1. HTML page structure</h2>
+      <p>Every HTML page follows the same skeleton. <code>&lt;head&gt;</code> holds information about the page, <code>&lt;body&gt;</code> holds what the visitor sees.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/main&gt;
+    &lt;footer&gt;&lt;p&gt;Footer&lt;/p&gt;&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <!-- 2. HTML TAGS -->
+    <section id="html">
+      <h2>2. Main HTML5 tags</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tag</th><th>Role</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr class="group"><td colspan="3">Document</td></tr>
+          <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declares an HTML5 document</td><td><code>&lt;!DOCTYPE html&gt;</code></td></tr>
+          <tr><td><code>&lt;html&gt;</code></td><td>Root of the page</td><td><code>&lt;html lang="en"&gt;…&lt;/html&gt;</code></td></tr>
+          <tr><td><code>&lt;head&gt;</code></td><td>Page information (not displayed)</td><td><code>&lt;head&gt;…&lt;/head&gt;</code></td></tr>
+          <tr><td><code>&lt;meta&gt;</code></td><td>Metadata (encoding, screen size)</td><td><code>&lt;meta charset="UTF-8"&gt;</code></td></tr>
+          <tr><td><code>&lt;title&gt;</code></td><td>Text in the browser tab</td><td><code>&lt;title&gt;Home&lt;/title&gt;</code></td></tr>
+          <tr><td><code>&lt;link&gt;</code></td><td>Links an external file (CSS)</td><td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td></tr>
+          <tr><td><code>&lt;style&gt;</code></td><td>CSS written inside the page</td><td><code>&lt;style&gt;p{color:red;}&lt;/style&gt;</code></td></tr>
+          <tr><td><code>&lt;script&gt;</code></td><td>JavaScript code or file</td><td><code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></td></tr>
+          <tr><td><code>&lt;body&gt;</code></td><td>Visible content</td><td><code>&lt;body&gt;…&lt;/body&gt;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Layout</td></tr>
+          <tr><td><code>&lt;header&gt;</code></td><td>Top of a page or section</td><td><code>&lt;header&gt;…&lt;/header&gt;</code></td></tr>
+          <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td><td><code>&lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/nav&gt;</code></td></tr>
+          <tr><td><code>&lt;main&gt;</code></td><td>Main content (once per page)</td><td><code>&lt;main&gt;…&lt;/main&gt;</code></td></tr>
+          <tr><td><code>&lt;section&gt;</code></td><td>Thematic part of the page</td><td><code>&lt;section&gt;…&lt;/section&gt;</code></td></tr>
+          <tr><td><code>&lt;div&gt;</code></td><td>Generic block container</td><td><code>&lt;div class="card"&gt;…&lt;/div&gt;</code></td></tr>
+          <tr><td><code>&lt;span&gt;</code></td><td>Generic inline container</td><td><code>&lt;span class="red"&gt;word&lt;/span&gt;</code></td></tr>
+          <tr><td><code>&lt;footer&gt;</code></td><td>Bottom of a page or section</td><td><code>&lt;footer&gt;©2026&lt;/footer&gt;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Text</td></tr>
+          <tr><td><code>&lt;h1&gt;</code> … <code>&lt;h6&gt;</code></td><td>Headings, from most to least important</td><td><code>&lt;h1&gt;Title&lt;/h1&gt;</code></td></tr>
+          <tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td><code>&lt;p&gt;Text&lt;/p&gt;</code></td></tr>
+          <tr><td><code>&lt;br&gt;</code></td><td>Line break (no closing tag)</td><td><code>Line 1&lt;br&gt;Line 2</code></td></tr>
+          <tr><td><code>&lt;strong&gt;</code> / <code>&lt;em&gt;</code></td><td>Important (bold) / emphasis (italic)</td><td><code>&lt;strong&gt;Warning&lt;/strong&gt;</code></td></tr>
+          <tr><td><code>&lt;a&gt;</code></td><td>Hyperlink</td><td><code>&lt;a href="page.html" target="_blank"&gt;Go&lt;/a&gt;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Lists & tables</td></tr>
+          <tr><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></td><td>Unordered (bullets) / ordered (numbers) list</td><td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td></tr>
+          <tr><td><code>&lt;li&gt;</code></td><td>List item</td><td><code>&lt;li&gt;Item&lt;/li&gt;</code></td></tr>
+          <tr><td><code>&lt;table&gt;</code></td><td>Table</td><td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td></tr>
+          <tr><td><code>&lt;tr&gt;</code> / <code>&lt;th&gt;</code> / <code>&lt;td&gt;</code></td><td>Row / header cell / data cell</td><td><code>&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Media</td></tr>
+          <tr><td><code>&lt;img&gt;</code></td><td>Image (no closing tag)</td><td><code>&lt;img src="cat.jpg" alt="A cat"&gt;</code></td></tr>
+          <tr><td><code>&lt;audio&gt;</code></td><td>Sound player</td><td><code>&lt;audio src="song.mp3" controls&gt;&lt;/audio&gt;</code></td></tr>
+          <tr><td><code>&lt;video&gt;</code></td><td>Video player</td><td><code>&lt;video src="clip.mp4" controls&gt;&lt;/video&gt;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Forms</td></tr>
+          <tr><td><code>&lt;form&gt;</code></td><td>Form container</td><td><code>&lt;form action="/send" method="post"&gt;…&lt;/form&gt;</code></td></tr>
+          <tr><td><code>&lt;label&gt;</code></td><td>Label of a field</td><td><code>&lt;label for="name"&gt;Name&lt;/label&gt;</code></td></tr>
+          <tr><td><code>&lt;input&gt;</code></td><td>Input field (text, email, checkbox…)</td><td><code>&lt;input type="text" id="name"&gt;</code></td></tr>
+          <tr><td><code>&lt;textarea&gt;</code></td><td>Multi-line text field</td><td><code>&lt;textarea rows="4"&gt;&lt;/textarea&gt;</code></td></tr>
+          <tr><td><code>&lt;select&gt;</code> / <code>&lt;option&gt;</code></td><td>Drop-down list</td><td><code>&lt;select&gt;&lt;option&gt;A&lt;/option&gt;&lt;/select&gt;</code></td></tr>
+          <tr><td><code>&lt;button&gt;</code></td><td>Clickable button</td><td><code>&lt;button type="submit"&gt;Send&lt;/button&gt;</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 3. ATTRIBUTES -->
+    <section id="attributes">
+      <h2>3. Common HTML attributes</h2>
+      <p>An attribute is written inside the opening tag: <code>name="value"</code>.</p>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Attribute</th><th>Role</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>class</code></td><td>Group name, reusable on many elements</td><td><code>&lt;p class="intro"&gt;</code></td></tr>
+          <tr><td><code>id</code></td><td>Unique name of one element</td><td><code>&lt;div id="menu"&gt;</code></td></tr>
+          <tr><td><code>style</code></td><td>Inline CSS</td><td><code>&lt;h1 style="color:blue;"&gt;</code></td></tr>
+          <tr><td><code>href</code></td><td>Link destination</td><td><code>&lt;a href="contact.html"&gt;</code></td></tr>
+          <tr><td><code>target</code></td><td>Where the link opens (<code>_blank</code> = new tab)</td><td><code>&lt;a href="…" target="_blank"&gt;</code></td></tr>
+          <tr><td><code>src</code></td><td>Media file path</td><td><code>&lt;img src="logo.png"&gt;</code></td></tr>
+          <tr><td><code>alt</code></td><td>Image description (accessibility)</td><td><code>&lt;img alt="Island logo"&gt;</code></td></tr>
+          <tr><td><code>width</code> / <code>height</code></td><td>Media size</td><td><code>&lt;img width="300"&gt;</code></td></tr>
+          <tr><td><code>controls</code></td><td>Shows play/pause on audio/video</td><td><code>&lt;video controls&gt;</code></td></tr>
+          <tr><td><code>type</code> / <code>name</code> / <code>placeholder</code></td><td>Field type / field name / hint text</td><td><code>&lt;input type="email" placeholder="you@mail.com"&gt;</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 4. CSS SYNTAX -->
+    <section id="css-syntax">
+      <h2>4. CSS rule syntax</h2>
+      <p>A CSS rule = a <strong>selector</strong> (what to style) + <strong>declarations</strong> between braces. Each declaration is <code>property: value;</code></p>
+<pre><code><span class="sel">.perso1</span> {
+  <span class="prop">font-size</span>: <span class="val">20px</span>;
+  <span class="prop">border</span>: <span class="val">2px solid black</span>;
+}
+/* this is a CSS comment */</code></pre>
+    </section>
+
+    <!-- 5. SELECTORS -->
+    <section id="selectors">
+      <h2>5. Selectors</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Selector</th><th>Targets</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>p</code></td><td>Every element of that tag</td><td><code>p { color: gray; }</code></td></tr>
+          <tr><td><code>.name</code></td><td>Every element with <code>class="name"</code></td><td><code>.perso1 { … }</code></td></tr>
+          <tr><td><code>#name</code></td><td>The element with <code>id="name"</code></td><td><code>#menu { … }</code></td></tr>
+          <tr><td><code>a b</code></td><td><code>b</code> inside <code>a</code></td><td><code>nav a { … }</code></td></tr>
+          <tr><td><code>a, b</code></td><td>Both <code>a</code> and <code>b</code></td><td><code>h1, h2 { … }</code></td></tr>
+          <tr><td><code>:hover</code></td><td>Element under the mouse</td><td><code>a:hover { opacity: 0.6; }</code></td></tr>
+          <tr><td><code>*</code></td><td>Every element</td><td><code>* { margin: 0; }</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 6. CSS PROPERTIES -->
+    <section id="css">
+      <h2>6. Main CSS3 properties</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Property</th><th>Role</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr class="group"><td colspan="3">Text</td></tr>
+          <tr><td><code>color</code></td><td>Text colour</td><td><code>color: #ff8800;</code></td></tr>
+          <tr><td><code>font-family</code></td><td>Font</td><td><code>font-family: Arial, sans-serif;</code></td></tr>
+          <tr><td><code>font-size</code></td><td>Text size</td><td><code>font-size: 18px;</code></td></tr>
+          <tr><td><code>font-weight</code></td><td>Boldness</td><td><code>font-weight: bold;</code></td></tr>
+          <tr><td><code>text-align</code></td><td>Alignment (left, center, right, justify)</td><td><code>text-align: center;</code></td></tr>
+          <tr><td><code>text-decoration</code></td><td>Underline, line-through, none</td><td><code>text-decoration: none;</code></td></tr>
+          <tr><td><code>line-height</code></td><td>Space between lines</td><td><code>line-height: 1.5;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Background</td></tr>
+          <tr><td><code>background-color</code></td><td>Background colour</td><td><code>background-color: lightblue;</code></td></tr>
+          <tr><td><code>background-image</code></td><td>Background image</td><td><code>background-image: url("sea.jpg");</code></td></tr>
+          <tr><td><code>background-repeat</code></td><td>Repeat the image or not</td><td><code>background-repeat: no-repeat;</code></td></tr>
+          <tr><td><code>background-size</code></td><td>Image size (cover, contain)</td><td><code>background-size: cover;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Box model</td></tr>
+          <tr><td><code>width</code> / <code>height</code></td><td>Size of the content</td><td><code>width: 80%;</code></td></tr>
+          <tr><td><code>padding</code></td><td>Space inside the border</td><td><code>padding: 10px 20px;</code></td></tr>
+          <tr><td><code>border</code></td><td>Border (width, style, colour)</td><td><code>border: 1px solid black;</code></td></tr>
+          <tr><td><code>border-radius</code></td><td>Rounded corners</td><td><code>border-radius: 12px;</code></td></tr>
+          <tr><td><code>margin</code></td><td>Space outside the border</td><td><code>margin: 0 auto;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Layout</td></tr>
+          <tr><td><code>display</code></td><td>Box type (block, inline, flex, grid, none)</td><td><code>display: flex;</code></td></tr>
+          <tr><td><code>position</code></td><td>Positioning (static, relative, absolute, fixed)</td><td><code>position: absolute; top: 0;</code></td></tr>
+          <tr><td><code>justify-content</code></td><td>Flex: horizontal alignment</td><td><code>justify-content: space-between;</code></td></tr>
+          <tr><td><code>align-items</code></td><td>Flex: vertical alignment</td><td><code>align-items: center;</code></td></tr>
+          <tr><td><code>z-index</code></td><td>Stacking order</td><td><code>z-index: 10;</code></td></tr>
+
+          <tr class="group"><td colspan="3">Effects</td></tr>
+          <tr><td><code>opacity</code></td><td>Transparency, 0 to 1</td><td><code>opacity: 0.5;</code></td></tr>
+          <tr><td><code>box-shadow</code></td><td>Shadow around a box</td><td><code>box-shadow: 2px 2px 6px gray;</code></td></tr>
+          <tr><td><code>transition</code></td><td>Smooth change between two states</td><td><code>transition: opacity 0.3s;</code></td></tr>
+          <tr><td><code>animation</code></td><td>Plays a <code>@keyframes</code> animation</td><td><code>animation: wave 2s infinite;</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 7. AT RULES -->
+    <section id="at-rules">
+      <h2>7. @ rules</h2>
+      <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rule</th><th>Role</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>@media</code></td><td>Applies styles depending on the screen</td><td><code>@media (max-width: 600px) { body { font-size: 14px; } }</code></td></tr>
+          <tr><td><code>@font-face</code></td><td>Loads a custom font</td><td><code>@font-face { font-family: "Pirate"; src: url("pirate.woff2"); }</code></td></tr>
+          <tr><td><code>@keyframes</code></td><td>Defines the steps of an animation</td><td><code>@keyframes wave { from { left: 0; } to { left: 50px; } }</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 8. LINKING -->
+    <section id="link">
+      <h2>8. Three ways to link CSS to HTML</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Inline</h3>
+          <p>In the <code>style</code> attribute. One element only.</p>
+          <code>&lt;h1 style="color:red;"&gt;</code>
+        </div>
+        <div class="card">
+          <h3>Internal</h3>
+          <p>In a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code>. One page only.</p>
+          <code>&lt;style&gt; h1 { color:red; } &lt;/style&gt;</code>
+        </div>
+        <div class="card best">
+          <h3>External (best)</h3>
+          <p>In a <code>.css</code> file linked with <code>&lt;link&gt;</code>. Shared by every page.</p>
+          <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
+        </div>
+      </div>
+      <p class="note">Priority if rules conflict: inline &gt; internal/external (the last one read wins) &gt; browser default. This is the "cascade" in Cascading Style Sheets.</p>
+    </section>
+
+    <!-- 9. VS CODE -->
+    <section id="vscode">
+      <h2>9. VS Code quick start</h2>
+      <ol class="steps">
+        <li><strong>Open a folder:</strong> File → Open Folder → choose or create your project folder.</li>
+        <li><strong>Create a page:</strong> New File → name it <code>index.html</code>.</li>
+        <li><strong>Get the skeleton:</strong> type <code>!</code> then press <kbd>Tab</kbd>: VS Code writes the HTML5 structure.</li>
+        <li><strong>Create the style sheet:</strong> New File → <code>style.css</code>, then link it in the <code>&lt;head&gt;</code>.</li>
+        <li><strong>Save:</strong> <kbd>Ctrl</kbd> + <kbd>S</kbd> (enable File → Auto Save to save automatically).</li>
+        <li><strong>Test:</strong> double-click <code>index.html</code> in your file explorer, or install the <em>Live Server</em> extension → right-click → "Open with Live Server" (page refreshes on each save).</li>
+        <li><strong>Debug:</strong> in the browser, press <kbd>F12</kbd> to inspect HTML and CSS.</li>
+        <li><strong>Format the code:</strong> <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd>.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Sources: W3Schools – Learn HTML & Learn CSS; Khan Academy – Intro to HTML/CSS. Made by Erwan SANQUER, ICAM B1, 2026.</p>
+    <p>Website built with the help of Claude (Anthropic) – <a href="https://claude.ai" target="_blank">claude.ai</a></p>
+  </footer>
+
+</body>
+</html>
