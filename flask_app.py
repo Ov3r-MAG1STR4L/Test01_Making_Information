@@ -121,6 +121,18 @@ def api_heure():
 def horloge():
     return render_template("horloge.html")
 
+# À coller dans flask_app.py, par exemple juste sous la route /horloge
+# (avant le bloc "Ne pas modifier").
+
+@app.get("/bibliotheque")
+def bibliotheque():
+    return render_template("bibliotheque.html")
+
+
+@app.get("/traducteur")
+def traducteur():
+    return render_template("traducteur.html")
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
